@@ -1,69 +1,26 @@
 /*
-7- Escriba un script que muestre la tabla de multiplicar de un número ingresado por pantalla, la creación de la tabla debe ser realizada con una función y mostrar solo los resultados del 1 al 10 del número elegido por el usuario.
+TP3 – Ejercicio 7
+Escriba un script que muestre la tabla de multiplicar de un número ingresado por pantalla.
+La creación de la tabla debe ser realizada con una función y mostrar solo los resultados
+del 1 al 10 del número elegido por el usuario.
 */
+function tablaMultiplicar(numero) {
+  //Creo array para guardar cada linea de la tabla
+  const lineas = [`<h3>Tabla de multiplicar del ${numero}</h3>`];
+  //Recorremos
+  for (let i = 1; i <= 10; i++) {
+    lineas.push(`<p> ${numero} x ${i} = (${numero * i})</p>`); //Agrego una nueva linea al array en cada vuelta
+  }
+  return lineas.join("");
+}
 
-/*const numero1 = parseInt(prompt("Ingrese el primer número"));
-const numero2 = parseInt(prompt("Ingrese el segundo número"));
-
-if (isNaN(numero1) || isNaN(numero2)) {
-  alert("Debe ingresar números válidos");
+//Scripy principal
+const numero = parseInt(
+  prompt(`Ingrese un numero y vera su tabla de multiplicar`)
+);
+if (isNaN(numero)) {
+  alert(`Ingresar un numero valido`);
 } else {
-  if (numero1 > numero2) {
-    document.writeln(`<p>El número mayor es: ${numero1}</p>`);
-  } else if (numero2 > numero1) {
-    document.writeln(`<p>El número mayor es: ${numero2}</p>`);
-  } else {
-    document.writeln(`<p>Ambos números son iguales</p>`);
-  }
+  const tabla = tablaMultiplicar(numero);
+  document.writeln(tabla);
 }
-
- */
-
-/**
- // Función que devuelve el mayor de dos números
-function numeroMayor(a, b) {
-  if (a > b) {
-    return a;
-  } else if (b > a) {
-    return b;
-  } else {
-    return "iguales"; // caso especial
-  }
-}
-
-// Programa principal
-const numero1 = parseInt(prompt("Ingrese el primer número"));
-const numero2 = parseInt(prompt("Ingrese el segundo número"));
-
-if (isNaN(numero1) || isNaN(numero2)) {
-  alert("Debe ingresar números válidos");
-} else {
-  const resultado = numeroMayor(numero1, numero2);
-
-  if (resultado === "iguales") {
-    document.writeln(`<p>Ambos números son iguales</p>`);
-  } else {
-    document.writeln(`<p>El número mayor es: ${resultado}</p>`);
-  }
-}
-
- */
-
-/*
-🔹 Versión 1 — Estilo directo (plano, sin función)
-const numero1 = parseInt(prompt("Ingrese el primer número"));
-const numero2 = parseInt(prompt("Ingrese el segundo número"));
-
-if (isNaN(numero1) || isNaN(numero2)) {
-  alert("Debe ingresar números válidos");
-} else {
-  if (numero1 > numero2) {
-    document.writeln(`<p>El número mayor es: ${numero1}</p>`);
-  } else if (numero2 > numero1) {
-    document.writeln(`<p>El número mayor es: ${numero2}</p>`);
-  } else {
-    document.writeln(`<p>Ambos números son iguales</p>`);
-  }
-}
-
- */
